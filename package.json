@@ -1,0 +1,41 @@
+{
+  "name": "nyx-test",
+  "version": "0.0.9",
+  "type": "module",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^25.3.3",
+    "agent-browser": "^0.15.3",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.18"
+  },
+  "main": "./dist/main.js",
+  "module": "./dist/main.js",
+  "types": "./dist/main.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/main.d.ts",
+      "import": "./dist/main.js"
+    }
+  },
+  "bin": {
+    "nyx": "./dist/bin/bin.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "vitest",
+    "test:watch": "vitest watch",
+    "build": "tsc && cp -R .ai dist/.ai && chmod +x dist/bin/bin.js"
+  },
+  "packageManager": "yarn@4.13.0",
+  "peerDependencies": {
+    "agent-browser": "*",
+    "vitest": "*"
+  },
+  "dependencies": {
+    "@inquirer/prompts": "^8.3.0",
+    "commander": "^14.0.3"
+  }
+}
